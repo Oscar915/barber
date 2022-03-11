@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'backbarber'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3710D1A7160F4909B71374FF830EFCAD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6F75F3632CA64D44B5D17125306F2876 }}
           package: '*.jar'
