@@ -28,7 +28,6 @@ public class Autorizar implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         resp.setHeader("Access-Control-Allow-Origin", "*");
         resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
-        resp.setHeader("Access-Control-Allow-Methods", "GET, POST");
 
         String url = req.getRequestURI();
         // http://localhost:8080 ------->url
