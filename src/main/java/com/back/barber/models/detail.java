@@ -1,4 +1,5 @@
 package com.back.barber.models;
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "details")
-public class detail {
+public class detail implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
