@@ -24,25 +24,12 @@ public class Autorizar implements Filter {
             throws IOException, ServletException {
 
         HttpServletRequest req = (HttpServletRequest) request;
-       
+        
         HttpServletResponse resp = (HttpServletResponse) response;
         resp.setHeader("Access-Control-Allow-Origin", "*");
         resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
-        String url = req.getRequestURI();
-        // http://localhost:8080 ------->url
-
-        if (url.contains("/api/detail")) {
             chain.doFilter(request, response);
-        }else{
-            String hash=req.getHeader("Authorization");
-            if(hash==null || hash.trim().equals("")){
-                response.setContentType("application/json");
-                String body="{\"autorizacion\":\"NO\"}";
-                response.getWriter().write(body);
-            }
-                
-        }
+        
     }
 
 }
