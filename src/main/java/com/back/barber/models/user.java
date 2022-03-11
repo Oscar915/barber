@@ -10,10 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "users")
 public class user implements Serializable{
     
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     Long id;
 
     String name;
@@ -23,7 +26,7 @@ public class user implements Serializable{
     Long phone;
     String image;
 
-   
+    @ManyToOne
     rol rol;
 
     public Long getId() {

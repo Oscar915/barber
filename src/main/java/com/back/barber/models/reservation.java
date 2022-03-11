@@ -10,15 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "reservations")
 public class reservation implements Serializable{
-   
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     Long id;
 
- 
+    @ManyToOne
     user user;
     
-
+    @ManyToOne
     service service;
 
     Date create_date;
