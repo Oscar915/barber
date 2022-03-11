@@ -10,18 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "details")
+
 public class detail implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+ 
     Long id;
 
-    @ManyToOne
+ 
     reservation reservation;
 
-    @ManyToOne
     payment payment;
 
 
